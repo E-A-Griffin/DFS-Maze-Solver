@@ -99,7 +99,8 @@ def neighborhood(G, x, y) :
   v_is_red = is_red(v)
   v_dir = get_dir(v)
 
-  neighborhood = []
+  # neighborhood
+  N = []
   # Change in x and change in y functions
   Δx,Δy = dir_to_fn[v_dir]
   cur_x = x
@@ -110,10 +111,10 @@ def neighborhood(G, x, y) :
     cur_y = Δy(cur_y)
     # if coordinate has opposite color to v
     if (is_bullseye(G[cur_x][cur_y]) or v_is_red != is_red(G[cur_x][cur_y])) :
-      neighborhood.append([cur_x,cur_y])
+      N.append([cur_x,cur_y])
 
   return {'red?':v_is_red, 'dir':v_dir, 'coord':[x,y],
-          'neighborhood':None if not neighborhood else neighborhood}
+          'neighborhood':None if not N else N}
 
 def build_graph(s_arr) :
   """
