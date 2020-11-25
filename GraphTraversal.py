@@ -156,7 +156,6 @@ def find_bullseye(G,bullseye,v=None,path=[],explored=set()) :
     path.append(v['coord'])
 
   if v['coord'] == bullseye :
-      #print('bullseye!')
       return path
 
   # prevent cycles
