@@ -164,10 +164,10 @@ def find_bullseye(G,bullseye,v=None,path=[],explored=set()) :
 
   explored.add(str(v['coord']))
   if v['neighborhood'] :
-    for edge in v['neighborhood'] :
-      if str(edge) not in explored :
-        u = G[edge[0]][edge[1]]
-        temp = find_bullseye(G,bullseye,u,path+[edge],explored)
+    for neighbor in v['neighborhood'] :
+      if str(neighbor) not in explored :
+        u = G[neighbor[0]][neighbor[1]]
+        temp = find_bullseye(G,bullseye,u,path+[neighbor],explored)
         if temp :
           return temp
 
